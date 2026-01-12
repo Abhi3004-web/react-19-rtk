@@ -18,7 +18,7 @@ function CartItem() {
         );
     }, [cartSelector]);
     const manageQty = (id, qty, stock) => {
-        const quantity = parseInt(qty) ? parseInt(qty) : 1;
+        let quantity = parseInt(qty) ? parseInt(qty) : 1;
         if (quantity < 1) quantity = 1;
         if (quantity > stock) quantity = stock;
         const tempItem = cartItem.map((item) => item.id === id ? { ...item, quantity } : item);
